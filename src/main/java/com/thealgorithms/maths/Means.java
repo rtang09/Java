@@ -51,7 +51,7 @@ public final class Means {
         int squaresum = 0;
         int length = numbers.size();
         for (int i=0;i<length;i++){
-            squaresum += numbers[i]**2;
+            squaresum += numbers[i]*numbers[i];
         }
         return Math.sqrt(squaresum/length);
     }
