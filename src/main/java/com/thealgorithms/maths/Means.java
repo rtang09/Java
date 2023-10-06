@@ -46,6 +46,16 @@ public final class Means {
         return IterableUtils.size(numbers) / StreamSupport.stream(numbers.spliterator(), false).reduce(0d, (x, y) -> x + 1d / y);
     }
 
+    public static Double quadratic(final Iterable<Double> numbers) {
+        checkIfNotEmpty(numbers);
+        int squaresum = 0;
+        int length = numbers.size();
+        for (int i=0;i<numbers.size();i++){
+            squaresum += numbers[i]**2;
+        }
+        return Math.sqrt(squaresum / length)
+    }
+
     private static void checkIfNotEmpty(final Iterable<Double> numbers) {
         if (!numbers.iterator().hasNext()) {
             throw new IllegalArgumentException("Emtpy list given for Mean computation.");
