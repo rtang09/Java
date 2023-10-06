@@ -49,11 +49,11 @@ public final class Means {
     public static Double quadratic(final Iterable<Double> numbers) {
         checkIfNotEmpty(numbers);
         int squaresum = 0;
-        int length = numbers.size()
+        int length = numbers.size();
         for (int i=0;i<length;i++){
             squaresum += numbers[i]**2;
         }
-        return Math.sqrt(squaresum/length)
+        return Math.sqrt(squaresum/length);
     }
 
     
