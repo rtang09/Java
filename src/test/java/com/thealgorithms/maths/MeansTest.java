@@ -33,6 +33,12 @@ class MeansTest {
     }
 
     @Test
+    void quadraticMeanZeroNumbers() throws IllegalArgumentException {
+        List<Double> numbers = new ArrayList<>();
+        assertThrows(IllegalArgumentException.class, () -> Means.quadratic(numbers));
+    }
+
+    @Test
     void arithmeticMeanSingleNumber() {
         List<Double> numbers = Lists.newArrayList(2.5);
         assertEquals(2.5, Means.arithmetic(numbers));
@@ -51,6 +57,12 @@ class MeansTest {
     }
 
     @Test
+    void quadraticMeanSingleNumber() {
+        List<Double> numbers = Lists.newArrayList(2.5);
+        assertEquals(2.5, Means.quadratic(numbers));
+    }
+    
+    @Test
     void arithmeticMeanMultipleNumbers() {
         Set<Double> numbers = Sets.newTreeSet(1d, 2.5, 83.3, 25.9999, 46.0001, 74.7, 74.5);
         assertEquals(44, Means.arithmetic(numbers));
@@ -68,4 +80,11 @@ class MeansTest {
         Vector<Double> numbers = new Vector<>(Lists.newArrayList(1d, 2.5, 83.3, 25.9999, 46.0001, 74.7, 74.5));
         assertEquals(4.6697322801074135, Means.harmonic(numbers));
     }
+
+    @Test
+    void harmonicMeanMultipleNumbers() {
+        Vector<Double> numbers = new Vector<>(Lists.newArrayList(1d, 8, 2, 7, 31.5));
+        assertEquals(14.90134222142422, Means.quadratic(numbers));
+    }
+    
 }
